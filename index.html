@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Carousel_text3</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id='body'>
+        <input type="button" value="点击启动浮层" id='button'>
+        <div id="floating">
+            <input type="checkbox" name="float"> 浮层
+        </div>
+    </div>
+</body>
+<script src="./jquery-1.11.3.js"></script>
+<script>
+    $('#button').on('click', () => {
+        if (floating.classList.value.indexOf('active') !== -1) {
+            remove_active()
+        } else {
+            floating.classList.add('active');
+            $(document).one('click', () => {
+                remove_active()
+            })
+        }
+    })
+    body.addEventListener('click', function (e) {
+        e.stopPropagation();
+    })
+    function remove_active(e) {
+        floating.classList.remove('active');
+    }
+</script>
+
+</html>
